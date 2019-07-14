@@ -99,6 +99,16 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div style="color:#333;font-size:22px;font-weight:bold;margin-bottom:10px;">教學文章</div>
+                            <div class="list-group">
+                                <button type="button" class="list-group-item" onclick="getArticleDetial(1);">YouTube播放速度</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <!-- <hr>
             <div>
@@ -140,11 +150,43 @@
         </div>
     </div>
 
+    <div class="modal fade bs-example-modal-lg" id="modalArticle">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="titleArticle"></h4>
+                </div>
+                <div class="modal-body">
+                    <pre id="preArticle"></pre>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">關閉</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <footer class="navbar-inverse">
         <div class="container-fluid text-center">
             <p class="text-muted" style="margin-top:10px;color:#ffffff">© Copyright 2019. All Rights Reserved.</p>
         </div>
     </footer>
+
+    <script type="text/javascript">
+
+        function getArticleDetial(articleID) {
+	        if (articleID === 1) {
+		        $("#titleArticle").text("YouTube播放速度");
+		        $("#preArticle").text('$("video").playbackRate=4;');
+	        } else {
+		        $("#titleArticle,#preArticle").text("");
+	        }
+	        $("#modalArticle").modal("show");
+        }
+
+
+    </script>
 
 </body>
 </html>
