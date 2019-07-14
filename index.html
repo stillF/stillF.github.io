@@ -16,10 +16,6 @@
                 <div class="navbar-header">
                     <a href="https://stillf.github.io/" class="navbar-brand" style="color:#ffffff;margin-left:10px;">stillF&ensp;信柴柴，得第一</a>
                 </div>
-                <!-- <ul class="nav navbar-nav navbar-right">
-                  <li><a href="#">Home</a></li>
-                  <li><a href="#">Sign in</a></li>
-                </ul> -->
             </div>
         </nav>
     </header>
@@ -27,17 +23,6 @@
     <div class="container" style="width:100%">
         <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
             <div class="row">
-                <!-- <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                  <div class="panel panel-default">
-                    <div class="panel-body">
-                      <img src="https://avatars.plurk.com/4722487-big60.jpg">
-                      <p class="text-muted">By <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Lorem Ipsum | <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Jan/21/2018</p>
-                      <h3>Images by pexels.com</h3>
-                      <p>Nulla vehicula semper tellus, eleifend convallis dolor accumsan vitae. Donec diam lorem, vulputate eget pharetra at, laoreet ac augue. Vestibulum tellus justo, faucibus quis hendrerit sit amet, rutrum non nulla[...]</p>
-                      <a href="javascript: void(0);" class="btn btn-default">Read more...</a>
-                    </div>
-                  </div>
-                </div> -->
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-body">
@@ -52,21 +37,29 @@
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-body">
-                            <div style="color:#333;font-size:22px;font-weight:bold;margin-bottom:10px;">常用網址</div>
-                            <!-- <div class="list-group">
-                                <a href="https://www.ptt.cc/bbs/Lifeismoney/index.html" class="list-group-item" target="_blank">PTT省錢版</a>
-                                <a href="https://disp.cc/b/PttHot" class="list-group-item" target="_blank">PTT熱門文章</a>
-                                <a href="https://ppt.cc/" class="list-group-item" target="_blank">PTT短網址</a>
-                            </div> -->
-                            <div class="btn-group btn-group-justified" role="group" style="margin-bottom:15px;">
-                                <span class="input-group-addon" id="basic-addon1">PTT</span>
-                                <div class="btn-group" role="group">
-                                    <a href="https://www.ptt.cc/bbs/Lifeismoney/index.html" target="_blank" class="btn btn-default">省錢版</a>
-                                </div>
-                                <div class="btn-group" role="group">
-                                    <a href="https://disp.cc/b/PttHot" target="_blank" class="btn btn-default">熱門文章</a>
-                                </div>
+                            <div style="color:#333;font-size:22px;font-weight:bold;margin-bottom:10px;">教學文章</div>
+                            <div class="list-group">
+                                <button type="button" class="list-group-item" onclick="getArticleDetial(1);">YouTube播放速度</button>
                             </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div style="color:#333;font-size:22px;font-weight:bold;margin-bottom:10px;">常用網址</div>
+
+                            <div class="list-group">
+                                <a href="https://ithelp.ithome.com.tw/" class="list-group-item" target="_blank">iT邦幫忙</a>
+                                <a href="https://www.blueshop.com.tw/" class="list-group-item" target="_blank">藍色小舖</a>
+                                <a href="https://www.playpcesor.com/" class="list-group-item" target="_blank">電腦玩物</a>
+                                <a href="https://briian.com/" class="list-group-item" target="_blank">重灌狂人</a>
+                                <a href="https://steachs.com/" class="list-group-item" target="_blank">就是教不落</a>
+                                <a href="https://www.soft4fun.net/" class="list-group-item" target="_blank">硬是要學</a>
+                                <a href="https://www.azofreeware.com/" class="list-group-item" target="_blank">阿榮福利味</a>
+                            </div>
+
+                            <hr />
 
                             <div class="btn-group btn-group-justified" role="group" style="margin-bottom:15px;">
                                 <span class="input-group-addon" id="basic-addon1">kiss電台</span>
@@ -99,43 +92,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <div style="color:#333;font-size:22px;font-weight:bold;margin-bottom:10px;">教學文章</div>
-                            <div class="list-group">
-                                <button type="button" class="list-group-item" onclick="getArticleDetial(1);">YouTube播放速度</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
-            <!-- <hr>
-            <div>
-              <nav aria-label="...">
-                <ul class="pager">
-                  <li class="previous"><a href="#"><span aria-hidden="true">←</span> Older Posts</a></li>
-                  <li class="next disabled"><a href="#">Newer Posts<span aria-hidden="true">→</span></a></li>
-                </ul>
-              </nav>
-            </div> -->
 
         </div>
 
         <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
             <div class="panel panel-default">
-                <!-- <div class="panel-body">
-                    <h4 class="text-center">站內搜尋</h4>
-                    <div class="form-group">
-                        <div class="input-group">
-                            <input class="form-control" type="text" name="search" placeholder="Search..." required />
-                            <span class="input-group-btn">
-                                <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
-                            </span>
-                        </div>
-                    </div>
-                    <hr> -->
-                <!-- <h4 class="text-center">關於我</h4> -->
                 <div class="text-center" style="margin-top:40px;">
                     <img src="/img/profile_img.jpg" class="img-responsive img-thumbnail">
                 </div>
