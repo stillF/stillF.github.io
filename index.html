@@ -6,8 +6,10 @@
     <title>stillF&nbsp;-&nbsp;主頁</title>
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/css/fontawesome-all.css">
+    <link rel="stylesheet" type="text/css" href="/css/toastr.min.css">
     <script type="text/javascript" src="/js/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/toastr.min.js"></script>
 </head>
 <body>
     <header>
@@ -126,6 +128,7 @@
                     <h4 class="modal-title" id="titleArticle"></h4>
                 </div>
                 <div class="modal-body">
+                    <button type="button" class="btn btn-success btn-xs" style="margin-bottom:10px;" onclick="btnCopy()">copy</button>
                     <pre id="preArticle"></pre>
                 </div>
                 <div class="modal-footer">
@@ -143,6 +146,27 @@
 
     <script type="text/javascript">
 
+        $(document).ready(function () {
+            toastr.options = {
+                "closeButton": true,
+                "debug": false,
+                "newestOnTop": false,
+                "progressBar": false,
+                "positionClass": "toast-bottom-full-width",
+                "preventDuplicates": false,
+                "onclick": null,
+                "showDuration": "300",
+                "hideDuration": "1000",
+                "timeOut": "3000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+            };
+        });
+
+
         function getArticleDetial(articleID) {
             if (articleID === 1) {
                 $("#titleArticle").text("YouTube播放速度");
@@ -151,6 +175,16 @@
                 $("#titleArticle, #preArticle").text("");
             }
             $("#modalArticle").modal("show");
+        }
+
+        function btnCopy() {
+            var _pre = document.querySelector("#preArticle");
+            var _range = document.createRange();
+            _range.selectNode(_pre);
+            window.getSelection().addRange(_range);
+            document.execCommand('copy');
+            window.getSelection().removeAllRanges();
+            toastr.success("複製成功");
         }
 
     </script>
