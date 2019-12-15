@@ -45,7 +45,7 @@
                         <div class="panel-body">
                             <div style="color:#333;font-size:22px;font-weight:bold;margin-bottom:10px;">教學文章</div>
                             <div class="list-group">
-                                <button type="button" class="list-group-item" onclick="getArticleDetial(1);">YouTube播放速度</button>
+                                <button type="button" class="list-group-item" onclick="getArticleDetail(1);">YouTube播放速度</button>
                             </div>
                         </div>
                     </div>
@@ -77,6 +77,10 @@
                                 <a href="https://steachs.com/" class="list-group-item" target="_blank">就是教不落</a>
                                 <a href="https://www.soft4fun.net/" class="list-group-item" target="_blank">硬是要學</a>
                                 <a href="https://www.azofreeware.com/" class="list-group-item" target="_blank">阿榮福利味</a>
+                                <hr />
+                                <a href="https://www.youtube.com/user/achen224/videos" class="list-group-item" target="_blank">Alex</a>
+                                <a href="https://www.youtube.com/user/flyvisionlivetour/videos" class="list-group-item" target="_blank">偷米騎巴哥</a>
+                                <a href="https://www.youtube.com/user/AmosLee1/videos" class="list-group-item" target="_blank">coke</a>
                             </div>
                         </div>
                     </div>
@@ -138,16 +142,16 @@
         </div>
     </div>
 
-    <div class="modal fade bs-example-modal-lg" id="modalArticle">
+    <div class="modal fade bs-example-modal-lg" id="articleModal">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="titleArticle"></h4>
+                    <h4 class="modal-title" id="articleTitle"></h4>
                 </div>
                 <div class="modal-body">
-                    <button type="button" class="btn btn-success btn-xs" onclick="btnCopy()">copy</button>
-                    <pre id="preArticle"></pre>
+                    <button type="button" class="btn btn-success btn-xs" onclick="copyBtn()">copy</button>
+                    <pre id="articlePre"></pre>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">關閉</button>
@@ -164,18 +168,18 @@
 
     <script type="text/javascript">
 
-        function getArticleDetial(articleID) {
+        function getArticleDetail(articleID) {
             if (articleID === 1) {
-                $("#titleArticle").text("YouTube播放速度");
-                $("#preArticle").text('//YouTube播放速度\n$("video").playbackRate=3;');
+                $("#articleTitle").text("YouTube播放速度");
+                $("#articlePre").text('//YouTube播放速度\n$("video").playbackRate=3;');
             } else {
-                $("#titleArticle, #preArticle").text("");
+                $("#articleTitle,#articlePre").text("");
             }
-            $("#modalArticle").modal("show");
+            $("#articleModal").modal("show");
         }
 
-        function btnCopy() {
-            var _pre = document.querySelector("#preArticle");
+        function copyBtn() {
+            var _pre = document.querySelector("#articlePre");
             var _range = document.createRange();
             _range.selectNode(_pre);
             window.getSelection().addRange(_range);
