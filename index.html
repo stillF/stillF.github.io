@@ -46,6 +46,7 @@
                             <div style="color:#333;font-size:22px;font-weight:bold;margin-bottom:10px;">教學文章</div>
                             <div class="list-group">
                                 <button type="button" class="list-group-item" onclick="getArticleDetail(1);">YouTube播放速度</button>
+                                <button type="button" class="list-group-item" onclick="getArticleDetail(3);">Facebook播放速度</button>
                                 <button type="button" class="list-group-item" onclick="getArticleDetail(2);">Chrome截圖</button>
                             </div>
                         </div>
@@ -206,31 +207,37 @@
     </footer>
 
     <script type="text/javascript">
-
         function getArticleDetail(articleID) {
-            if (articleID === 1) {
-                $("#articleTitle").text("YouTube播放速度");
-                $("#articlePre").text('//YouTube播放速度\n$("video").playbackRate=3;');
-            } else if (articleID === 2) {
-                $("#articleTitle").text("Chrome截圖");
-                $("#articlePre").text('//Chrome截圖\n(1)F12\n(2)Ctrl + Shift + P\n(3)Capture full size screenshot');
-            }else {
-                $("#articleTitle,#articlePre").text("");
-            }
-            $("#articleModal").modal("show");
+	        switch (articleID) {
+	            case 1:
+		            $("#articleTitle").text("YouTube播放速度");
+		            $("#articlePre").text('//YouTube播放速度\n$("video").playbackRate=3;');
+		            break;
+	            case 2:
+		            $("#articleTitle").text("Chrome截圖");
+		            $("#articlePre").text('//Chrome截圖\n(1)F12\n(2)Ctrl + Shift + P\n(3)Capture full size screenshot');
+		            break;
+	            case 3:
+		            $("#articleTitle").text("Facebook播放速度");
+		            $("#articlePre").text('//Facebook播放速度\n$0.playbackRate=2;');
+		            break;
+                default:
+                    $("#articleTitle,#articlePre").text("");
+		            break;
+	        }
+	        $("#articleModal").modal("show");
         }
+
 
         function copyBtn() {
-            var _pre = document.querySelector("#articlePre");
-            var _range = document.createRange();
-            _range.selectNode(_pre);
-            window.getSelection().addRange(_range);
-            document.execCommand('copy');
-            window.getSelection().removeAllRanges();
-            toastr.success("複製成功");
+	        var _pre = document.querySelector("#articlePre");
+	        var _range = document.createRange();
+	        _range.selectNode(_pre);
+	        window.getSelection().addRange(_range);
+	        document.execCommand('copy');
+	        window.getSelection().removeAllRanges();
+	        toastr.success("複製成功");
         }
-
     </script>
-
 </body>
 </html>
