@@ -48,6 +48,7 @@
                                 <button type="button" class="list-group-item" onclick="getArticleDetail(1);">YouTube播放速度</button>
                                 <button type="button" class="list-group-item" onclick="getArticleDetail(3);">Facebook播放速度</button>
                                 <button type="button" class="list-group-item" onclick="getArticleDetail(2);">Chrome截圖</button>
+                                <button type="button" class="list-group-item" onclick="getArticleDetail(4);">Google搜尋</button>
                             </div>
                         </div>
                     </div>
@@ -284,6 +285,10 @@
 	            case 3:
 		            $("#articleTitle").text("Facebook播放速度");
 		            $("#articlePre").text('//Facebook播放速度\n$0.playbackRate=2;');
+		            break;
+	            case 4:
+		            $("#articleTitle").text("Google搜尋");
+		            $("#articlePre").text('//Google搜尋\n(1)「 -」排除關鍵字\n(2)「+」聯集資料\n(3)「 OR 」聯集資料\n(4)「"」精準搜尋\n(5)「*」萬用符號\n(6)「日期..日期」\n2019..2020\n(7)「價錢..價錢」\n1000..2000 元\n(8)「after:日期」\nafter:2020-01-01\n(9)「before:日期」\nbefore:2020-01-01\n(10)「site:網址 關鍵字」\n(11)「intitile:」網站標題\n(12)「inurl:」網址標題\n(13)「filetype:pdf」\n(14)「author:作者」\n(15)「~」同義字');
 		            break;
                 default:
                     $("#articleTitle,#articlePre").text("");
