@@ -79,6 +79,7 @@
                                 <button type="button" class="list-group-item" onclick="getArticleDetail(1);">YouTube播放速度</button>
                                 <button type="button" class="list-group-item" onclick="getArticleDetail(3);">Facebook播放速度</button>
                                 <button type="button" class="list-group-item" onclick="getArticleDetail(2);">Chrome截圖</button>
+                                <button type="button" class="list-group-item" onclick="getArticleDetail(6);">YouTube截圖</button>
                                 <button type="button" class="list-group-item" onclick="getArticleDetail(4);">Google搜尋</button>
                                 <a href="https://top-hashtags.com/instagram/" class="list-group-item" target="_blank">Instagram熱搜榜</a>
                                 <button type="button" class="list-group-item" onclick="getArticleDetail(5);">常用符號</button>
@@ -640,31 +641,34 @@
             switch (articleID) {
                 case 1:
                     $("#articleTitle").text("YouTube播放速度");
-                    $("#articlePre").text('//YouTube播放速度\n$("video").playbackRate=3;');
+                    $("#articlePre").text('// YouTube播放速度\n$("video").playbackRate=3;');
                     break;
                 case 2:
                     $("#articleTitle").text("Chrome截圖");
-                    $("#articlePre").text('//Chrome截圖\n(1)F12\n(2)Ctrl + Shift + P\n(3)Capture full size screenshot');
+                    $("#articlePre").text('// Chrome截圖\n(1)F12\n(2)Ctrl + Shift + P\n(3)Capture full size screenshot');
                     break;
                 case 3:
                     $("#articleTitle").text("Facebook播放速度");
-                    $("#articlePre").text('//Facebook播放速度\n$0.playbackRate=2;');
+                    $("#articlePre").text('// Facebook播放速度\n$0.playbackRate=2;');
                     break;
                 case 4:
                     $("#articleTitle").text("Google搜尋");
-                    $("#articlePre").text('//Google搜尋\n(1)「 -」排除關鍵字\n(2)「+」聯集資料\n(3)「 OR 」聯集資料\n(4)「"」精準搜尋\n(5)「*」萬用符號\n(6)「日期..日期」\n2019..2020\n(7)「價錢..價錢」\n1000..2000 元\n(8)「after:日期」\nafter:2020-01-01\n(9)「before:日期」\nbefore:2020-01-01\n(10)「site:網址 關鍵字」\n(11)「intitile:」網站標題\n(12)「inurl:」網址標題\n(13)「filetype:pdf」\n(14)「author:作者」\n(15)「~」同義字\n(16)Google學術\nhttps://scholar.google.com.tw/\n(17)Google圖書\nhttps://books.google.com.tw/\n(18)Google搜尋趨勢\nhttps://trends.google.com/trends/?geo=TW\n(19)醫學文獻\nhttps://pubmed.ncbi.nlm.nih.gov/');
+                    $("#articlePre").text('// Google搜尋\n(1)「 -」排除關鍵字\n(2)「+」聯集資料\n(3)「 OR 」聯集資料\n(4)「"」精準搜尋\n(5)「*」萬用符號\n(6)「日期..日期」\n2019..2020\n(7)「價錢..價錢」\n1000..2000 元\n(8)「after:日期」\nafter:2020-01-01\n(9)「before:日期」\nbefore:2020-01-01\n(10)「site:網址 關鍵字」\n(11)「intitile:」網站標題\n(12)「inurl:」網址標題\n(13)「filetype:pdf」\n(14)「author:作者」\n(15)「~」同義字\n(16)Google學術\nhttps://scholar.google.com.tw/\n(17)Google圖書\nhttps://books.google.com.tw/\n(18)Google搜尋趨勢\nhttps://trends.google.com/trends/?geo=TW\n(19)醫學文獻\nhttps://pubmed.ncbi.nlm.nih.gov/');
                     break;
                 case 5:
                     $("#articleTitle").text("常用符號");
-                    $("#articlePre").text('//常用符號\n！\n，\n、\n？\n。\n：\n；\n「」\n【】\n\'\n"\n※\n『』\n（）\n()\n《》\n[]\n↑\n↓\n←\n→\n—\n–\n｜\n│\n∙・•●\n●\n○\n☐\n☑\n☒\n✓\n✗\n★\n☆\n①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳\n⑴⑵⑶⑷⑸⑹⑺⑻⑼⑽⑾⑿⒀⒁⒂');
+                    $("#articlePre").text('// 常用符號\n！\n，\n、\n？\n。\n：\n；\n「」\n【】\n\'\n"\n※\n『』\n（）\n()\n《》\n[]\n↑\n↓\n←\n→\n—\n–\n｜\n│\n∙・•●\n●\n○\n☐\n☑\n☒\n✓\n✗\n★\n☆\n①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳\n⑴⑵⑶⑷⑸⑹⑺⑻⑼⑽⑾⑿⒀⒁⒂');
                     break;
+                case 5:
+                    $("#articleTitle").text("YouTube截圖");
+                    $("#articlePre").text('// YouTube截圖\njavascript:(()=>{let cv=document.createElement("canvas"),c=cv.getContext("2d"),vid=document.querySelector("video");cv.width=vid.videoWidth,cv.height=vid.videoHeight,c.drawImage(vid,0,0);let a=document.body.appendChild(document.createElement("a")),now=new Date(),timestamp=now.getFullYear()+(now.getMonth()+1).toString().padStart(2,"0")+now.getDate().toString().padStart(2,"0")+now.getHours().toString().padStart(2,"0")+now.getMinutes().toString().padStart(2,"0")+now.getSeconds().toString().padStart(2,"0");a.href=cv.toDataURL(),a.download=`YouTube_${timestamp}.png`,a.click(),a.remove(),cv.remove();})()');
+                    break;                    
                 default:
                     $("#articleTitle,#articlePre").text("");
                     break;
             }
             $("#articleModal").modal("show");
         }
-
 
         function copyBtn() {
             var _pre = document.querySelector("#articlePre");
