@@ -714,7 +714,7 @@
             switch (articleID) {
                 case 1:
                     $("#articleTitle").text("YouTube播放速度");
-                    $("#articlePre").text('// YouTube播放速度\n$("video").playbackRate=3;');
+                    $("#articlePre").text('// YouTube播放速度\n(function () {\n   const speed = 3.5;\n \n   const video = document.querySelector("video");\n   if (video) { video.playbackRate = speed; }\n \n   const player = document.getElementById("movie_player");\n   if (player && typeof player.setPlaybackRate === "function") {\n     player.setPlaybackRate(speed);\n   }\n \n   return speed;\n })();');
                     break;
                 case 2:
                     $("#articleTitle").text("Chrome截圖");
